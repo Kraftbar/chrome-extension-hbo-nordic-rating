@@ -1,0 +1,35 @@
+<div class="rating-row">
+        <div class="row-filler"></div>
+        <div class="rating-score imdb-score" title="IMDB Rating: 8.3 / 15949" data-link="/title/tt12888462/"><span class="over">8.3</span></div>
+        <div class="rating-score tomato-meter over" title="Rotten Tomatoes Rating: 100% / 95%" data-link="/m/my_octopus_teacher"><span>99<span class="percent">%</span></span></div>
+        <div class="rating-score tomato-audience-score" title="Rotten Tomatoes Rating: 100% / 95%" data-link="/m/my_octopus_teacher"><span>95<span class="percent">%</span></span></div>
+        <div class="rating-score douban-score hidden" title="Douban Rating: 9.4 / 8801" data-link="/subject/35185752/"><span>9.4</span></div>
+</div>
+
+
+
+
+
+.rating-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    font-weight: 400;
+    width: 100%;
+}
+
+.rating-score {
+    display: inline-block;
+    min-width: 20px;
+    min-height: 20px;
+    text-align: center;
+    line-height: 1;
+    white-space: nowrap;
+    border-radius: 50%;
+    padding: 2px;
+}
+.imdb-score {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 205, 25);
+}
