@@ -28,7 +28,7 @@ function initMutation(){
 var timeoutHandle ;
 function myTimeout(functionToTimeout) {
   clearTimeout(timeoutHandle );
-  timeoutHandle  = setTimeout(function(){ functionToTimeout(); }, 3000);
+  timeoutHandle  = setTimeout(function(){ functionToTimeout(); }, 20000);
 }
 // consider reacting to changes in DOM instead 
 myTimeout(insertRatings)
