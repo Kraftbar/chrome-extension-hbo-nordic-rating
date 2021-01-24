@@ -30,9 +30,7 @@ function myTimeout(functionToTimeout) {
   clearTimeout(timeoutHandle );
   timeoutHandle  = setTimeout(function(){ functionToTimeout(); }, 3000);
 }
-// seems "run_at" : "document_idle" runs too fast, timeoutout workaround.
-// myTimeout(initMutation)
-
+// consider reacting to changes in DOM instead 
 myTimeout(insertRatings)
 
 // -------------------------------------------------
@@ -60,20 +58,22 @@ function insertRatings() {
     matched=matched.getAttribute("data-analytics-shelf-title"); //debug
     let requestURL ="https://www.omdbapi.com/?t=" + matched + "&apikey=a15d9392"
 
-
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', requestURL,false);
+    xhr.open( "GET",requestURL, true );
+    xhr.extraInfo = node;
+
+    xhr.onload = function( e,node  ) {
+        console.log( ': step 3');
+        responsejson=this.responseText;
+        var obj = JSON.parse(responsejson, function (key, value) {
+          return value;
+        });
+        // to keep context 
+        this.extraInfo.innerHTML=obj.imdbRating    
+    };
+
     xhr.send();
-    responsejson=  xhr.responseText
-    console.log("reponse"+responsejson)
-    var obj = JSON.parse(responsejson, function (key, value) {
-        return value;
-    });
-    node.innerHTML=obj.imdbRating    
-
   }
-
-
 }
 
 
