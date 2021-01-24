@@ -1,5 +1,6 @@
 // TODO:\
 //  -Finne en måte den bare triggerer på nye elementer
+//  -Finne en ny måte å søke opp hva serien heter
 
 
 
