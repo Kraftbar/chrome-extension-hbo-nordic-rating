@@ -35,7 +35,7 @@ function myTimeout(functionToTimeout) {
 myTimeout(insertRatings)
 
 // -------------------------------------------------
-// --------- do the business ---------
+// ---------         do the business         ---------
 // -------------------------------------------------
 function insertRatings() {
   var matches = document.getElementsByClassName("preview _1v20p"); // or:
